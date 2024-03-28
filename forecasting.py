@@ -101,7 +101,7 @@ forecasted=[salesData.index[-1]+ DateOffset(months=x)for x in range(0,24)]
 fD=pd.DataFrame(index=forecasted[1:],columns=salesData.columns)
 futureDf=pd.concat([salesData,fD])
 futureDf['forecast'] = results.predict(start = 104, end = 120, dynamic= True)  
-future_df[['Sales', 'forecast']].plot(figsize=(12, 8))
+futureDf[['Sales', 'forecast']].plot(figsize=(12, 8))
 
 plt.show()
 
